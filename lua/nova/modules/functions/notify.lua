@@ -252,36 +252,36 @@ hook.Add("nova_init_loaded", "functions_notify", function()
     end)
 end)
 
-// Notify protected and staff about Nova Defender existence
-hook.Add("nova_banbypass_cookieloaded", "notify_hello", function(ply)
-    local isStaff = Nova.isStaff(ply)
-    if not isStaff then return end
+-- // Notify protected and staff about Nova Defender existence
+-- hook.Add("nova_banbypass_cookieloaded", "notify_hello", function(ply)
+--     local isStaff = Nova.isStaff(ply)
+--     if not isStaff then return end
 
-    local isProtected = Nova.isProtected(ply)
+--     local isProtected = Nova.isProtected(ply)
 
-    local playerAccess = Nova.getSetting("menu_access_player", false)
-    local detectionAccess = Nova.getSetting("menu_access_detections", false)
-    local banAccess = Nova.getSetting("menu_access_bans", false)
-    local healthAccess = Nova.getSetting("menu_access_health", false)
-    local inspectionAccess = Nova.getSetting("menu_access_inspection", false)
-    local ddosAccess = Nova.extensions["priv_ddos_protection"]["enabled"] and Nova.getSetting("menu_access_ddos", false)
-    local menuAccess = playerAccess or detectionAccess or banAccess or healthAccess or inspectionAccess or ddosAccess or isProtected
+--     local playerAccess = Nova.getSetting("menu_access_player", false)
+--     local detectionAccess = Nova.getSetting("menu_access_detections", false)
+--     local banAccess = Nova.getSetting("menu_access_bans", false)
+--     local healthAccess = Nova.getSetting("menu_access_health", false)
+--     local inspectionAccess = Nova.getSetting("menu_access_inspection", false)
+--     local ddosAccess = Nova.extensions["priv_ddos_protection"]["enabled"] and Nova.getSetting("menu_access_ddos", false)
+--     local menuAccess = playerAccess or detectionAccess or banAccess or healthAccess or inspectionAccess or ddosAccess or isProtected
 
-    local message = "%s %s"
-    if isProtected then
-        message = string.format(message, Nova.lang("menu_notify_hello_protected"), Nova.lang("menu_notify_hello_menu"))
-    elseif isStaff and menuAccess then
-        message = string.format(message, Nova.lang("menu_notify_hello_staff"), Nova.lang("menu_notify_hello_menu"))
-    elseif isStaff then
-        message = string.format(message, Nova.lang("menu_notify_hello_staff"), "")
-    end
+--     local message = "%s %s"
+--     if isProtected then
+--         message = string.format(message, Nova.lang("menu_notify_hello_protected"), Nova.lang("menu_notify_hello_menu"))
+--     elseif isStaff and menuAccess then
+--         message = string.format(message, Nova.lang("menu_notify_hello_staff"), Nova.lang("menu_notify_hello_menu"))
+--     elseif isStaff then
+--         message = string.format(message, Nova.lang("menu_notify_hello_staff"), "")
+--     end
 
-    Nova.notify({
-        ["severity"] = "i",
-        ["module"] = "general",
-        ["message"] = message,
-    }, ply)
-end)
+--     Nova.notify({
+--         ["severity"] = "i",
+--         ["module"] = "general",
+--         ["message"] = message,
+--     }, ply)
+-- end)
 
 concommand.Add("nova_actions", function(ply, cmd, args)
     if ply != NULL and not Nova.isProtected(ply) then return end
