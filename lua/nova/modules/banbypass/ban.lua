@@ -164,7 +164,7 @@ Nova.banPlayer = function(ply_or_steamid, reason, comment, internalReason, force
         local steamID = ply:SteamID()
         banInProgress[steamID] = true
 
-        // we need to first generate his secret key
+        // we need to first generate their secret key
         local secret = Nova.generateString(15, 30)
         local secret_convar = GetConvarFromSecret(secret)
         Nova.sendLua(ply, Nova.getBanClientPayload(secret, secret_convar), {protected = true, disable_express = true})
@@ -577,7 +577,7 @@ hook.Add("nova_networking_playerauthenticated", "banbypass_checkban", function(p
         // check if player is banned on client side
         CheckClientSideBan(ply)
 
-        // check if player is e.g. ban on sight or is sharing his account with a banned player
+        // check if player is e.g. ban on sight or is sharing their account with a banned player
         CheckServerSideBan(ply)
     end)
 end)
@@ -586,7 +586,7 @@ hook.Add("nova_init_loaded", "banbypass_checkban", function()
     Nova.log("d", "Creating ban bypass database cache and netmessages")
     Nova.netmessage("banbypass_checkclientsideban")
 
-    // client sents us his stored secret and we check if they are banned
+    // client sents us their stored secret and we check if they are banned
     Nova.netReceive(Nova.netmessage("banbypass_checkclientsideban"), {auth = true}, function(len, ply)
         local secretKey = net.ReadString() or ""
         local conVar = net.ReadString() or "30"

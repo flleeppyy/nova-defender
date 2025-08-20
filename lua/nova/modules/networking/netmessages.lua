@@ -46,13 +46,13 @@ end
 /*
 	All netmessage-names are randomly generated
     This fixes the most trivial bypass for sadly most of all existing anti-cheat-systems
-    A client could easily type in his console "net_blockmsg 'hey_i_am_cheating_please_ban_me'"
+    A client could easily type in their console "net_blockmsg 'hey_i_am_cheating_please_ban_me'"
     By randomizing the netmessage-name, the client can't easily find out which netmessage is blocked
     A skilled person can still find out which netmessage corresponds to the netmessage-name
 
     We pass the 'restricted' parameter to the Nova.netmessage function.
     This is done for messages only a protected player should send. 
-    A client can only send these messages if  injected his own code into his game. 
+    A client can only send these messages if  injected their own code into their game. 
 */
 
 // create our little netmessage pool with a mapping

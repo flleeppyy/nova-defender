@@ -232,7 +232,7 @@ local function CreateTimer()
 
             local protectedPlayers = Nova.getSetting("security_privileges_group_protection_protected_players", {})
             local protectedGroups = Nova.getSetting("security_permissions_groups_protected", {})
-            // player is protected but his group mismatch
+            // player is protected but their group mismatch
             if isProtected
                 and protectedPlayers[steamID]
                 and protectedPlayers[steamID].group != userGroup then
@@ -283,7 +283,7 @@ hook.Add("nova_config_setting_changed", "privileges_group_protection", function(
             timer.Simple(1, function()
                 Nova.kickPlayer(ply, Nova.getSetting("security_privileges_group_protection_kick_reason", "Protected Usergroup Removed"), "admin_manual")
             end)
-            Nova.log("i", string.format("%s was removed from the protected players list. Setting his usergroup to default and kick them.", Nova.playerName(ply)))
+            Nova.log("i", string.format("%s was removed from the protected players list. Setting their usergroup to default and kick them.", Nova.playerName(ply)))
         end
     end
 
@@ -293,7 +293,7 @@ hook.Add("nova_config_setting_changed", "privileges_group_protection", function(
             local ply = Nova.fPlayerBySteamID(k)
             if not IsValid(ply) then continue end
             SetUserGroup(ply, v.group)
-            Nova.log("i", string.format("%s was added to the protected players list. Setting his usergroup to %q.", Nova.playerName(ply), v.group))
+            Nova.log("i", string.format("%s was added to the protected players list. Setting their usergroup to %q.", Nova.playerName(ply), v.group))
             hook.Run("nova_base_initplayer", ply)
         end
     end
@@ -304,13 +304,13 @@ hook.Add("nova_config_setting_changed", "privileges_group_protection", function(
             local ply = Nova.fPlayerBySteamID(k)
             if not IsValid(ply) then continue end
             SetUserGroup(ply, v.group)
-            Nova.log("i", string.format("%s was changed in the protected players list. Setting his usergroup to %q.", Nova.playerName(ply), v.group))
+            Nova.log("i", string.format("%s was changed in the protected players list. Setting their usergroup to %q.", Nova.playerName(ply), v.group))
         end
     end
 end)
 
 hook.Add("nova_base_playerdisconnect", "security_privileges_clearactions", function(steamID)
-    // if a player disconnects, clear his actions
+    // if a player disconnects, clear their actions
     ignore[steamID] = nil
     groupCache[steamID] = nil
 end)

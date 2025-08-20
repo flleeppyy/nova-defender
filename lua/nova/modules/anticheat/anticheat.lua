@@ -298,7 +298,7 @@ Nova.registerAction("anticheat_verify_execution", "anticheat_verify_action", {
             if not answer then
                 Nova.logDetection({
                     steamid = steamID,
-                    comment = "Failed to verify whether the anticheat is running on his side. This can also be caused by a slow connection.",
+                    comment = "Failed to verify whether the anticheat is running on their side. This can also be caused by a slow connection.",
                     reason = Nova.getSetting("anticheat_verify_reason", "Anticheat validation timeout"),
                     internal_reason = "anticheat_verify_execution",
                 })

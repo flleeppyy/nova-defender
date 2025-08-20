@@ -58,7 +58,7 @@ local phrases = {
     ["networking_vpn_apikey"] = "VPN API key:\nFor scanning IP addresses. You need to register at https://www.ipqualityscore.com/create-account and retrieve your key at https://www.ipqualityscore.com/user/settings.",
     ["networking_vpn_countrycodes"] = "Allowed countries to join your server. Get country codes from here: https://countrycode.org/ (2-letter code in uppercase). It is recommended to whitelist your own and neighboring countries. You can add more countries time by time.",
     ["networking_vpn_whitelist_asns"] = "Whitelisted ASN numbers (number to identify an internet service provider). It may happen that the API incorrectly detects a VPN connection. Therefore, known ISPs are whitelisted. Get them from https://ipinfo.io/countries. Alternatively you can see the ASN of each connected client in 'Player' tab.",
-    ["networking_screenshot_store_ban"] = "Save screenshots (On ban):\nRight before a player gets banned, a screenshot of his screen will be made and saved inside the servers '/data/nova/ban_screenshots' folder.",
+    ["networking_screenshot_store_ban"] = "Save screenshots (On ban):\nRight before a player gets banned, a screenshot of their screen will be made and saved inside the servers '/data/nova/ban_screenshots' folder.",
     ["networking_screenshot_store_manual"] = "Save screenshots (Menu):\nIf an admin takes a screenshot of a player, it will get saved inside the servers '/data/nova/admin_screenshots' folder.",
     ["networking_screenshot_limit_ban"] = "Screenshot limit (On ban):\nMaximum number of screenshots stored inside the servers data folder. Oldest will get deleted.",
     ["networking_screenshot_limit_manual"] = "Screenshot limit (Menu):\nMaximum number of screenshots stored inside the servers data folder. Oldest will get deleted.",
@@ -133,8 +133,8 @@ local phrases = {
     ["anticheat_aimbot_action"] = "What should happen when a player uses an aimbot?",
     ["anticheat_aimbot_reason"] = "Reason for ban of a player when they use an aimbot.",
     ["anticheat_aimbot_check_snap"] = "Detect snapping:\nDetect if players viewdirection changes instantly. WARNING: This will prevent clients to set their viewangles (if not done serverside) and therefore break some addons!",
-    ["anticheat_aimbot_check_move"] = "Detect suspicious movement:\nDetect if a player changes his view constantly without moving his mouse.",
-    ["anticheat_aimbot_check_contr"] = "Detect contradictory movements:\nDetects if a player moves his mouse in a different direction than his view changes.",
+    ["anticheat_aimbot_check_move"] = "Detect suspicious movement:\nDetect if a player changes their view constantly without moving their mouse.",
+    ["anticheat_aimbot_check_contr"] = "Detect contradictory movements:\nDetects if a player moves their mouse in a different direction than their view changes.",
     /*
         Exploit
     */
@@ -153,9 +153,9 @@ local phrases = {
     ["security_privileges_group_protection_enabled"] = "Automated rank protection:\nIf a player that was not whitelisted has for example a protected usergroup, we take action.",
     ["security_privileges_group_protection_escalation_action"] = "What should happen when a player has a protected usergroup they are not supposed to?",
     ["security_privileges_group_protection_escalation_reason"] = "Reason for a player gets kicked or banned if they have a protected usergroup that they are not supposed to.",
-    ["security_privileges_group_protection_removal_action"] = "What should happen when a protected player loses his usergroup?",
+    ["security_privileges_group_protection_removal_action"] = "What should happen when a protected player loses their usergroup?",
     ["security_privileges_group_protection_protected_players"] = "Protected Players:\nAll players that are allowed to have a protected usergroup. If you remove a player that is online will get them kicked.",
-    ["security_privileges_group_protection_kick_reason"] = "Reason for kicking a protected player if his protection gets removed while they are connected.",
+    ["security_privileges_group_protection_kick_reason"] = "Reason for kicking a protected player if their protection gets removed while they are connected.",
     /*
         Detections
     */
@@ -593,14 +593,14 @@ Security:
     ["menu_elem_ddos_cpu_util"] = "CPU Utilization",
     ["menu_elem_ddos_net_util"] = "Network Utilization",
 
-    ["indicator_pending"] = "Player has not sent his indicators to the server yet. Either they block them or needs some more time.",
+    ["indicator_pending"] = "Player has not sent their indicators to the server yet. Either they block them or needs some more time.",
     ["indicator_install_fresh"] = "Player recently installed this game",
     ["indicator_install_reinstall"] = "Player recently reinstalled this game",
     ["indicator_advanced"] = "Player uses debug/developer commands (they might know what they are doing...)",
     ["indicator_first_connect"] = "First time connected to this server (if game hasn't been reinstalled)",
     ["indicator_cheat_hotkey"] = "Player has pressed a key (INSERT, HOME, PAGEUP, PAGEDOWN) that is often used to open cheat menus",
     ["indicator_cheat_menu"] = "Player has opened a menu using one of the keys INSERT, HOME, PAGEUP or PAGEDOWN",
-    ["indicator_bhop"] = "Player has a bunnyhop bind on his mouse wheel (like 'bind mwheelup +jump')",
+    ["indicator_bhop"] = "Player has a bunnyhop bind on their mouse wheel (like 'bind mwheelup +jump')",
     ["indicator_memoriam"] = "Player has used the cheat 'Memoriam' in the past or is currently doing so",
     ["indicator_multihack"] = "Player has used the cheat 'Garrysmod 64-bit Visuals Multihack Reborn' in the past or is currently doing so",
     ["indicator_fenixmulti"] = "Player has used the cheat 'FenixMulti' in the past or is currently doing so",
@@ -611,12 +611,12 @@ Security:
     ["indicator_profile_familyshared"] = "Player has a familyshared account",
     ["indicator_profile_friend_banned"] = "A Steam friend of this player has been banned by Nova Defender",
     ["indicator_profile_recently_created"] = "Steam profile has been created in the last 7 days",
-    ["indicator_profile_nogames"] = "Player has not purchased any games on his Steam profile yet",
+    ["indicator_profile_nogames"] = "Player has not purchased any games on their Steam profile yet",
     ["indicator_profile_new_player"] = "Player has not played Garry's Mod for more than 2 hours in total",
     ["indicator_profile_vac_banned"] = "Player has already received a VAC ban",
     ["indicator_profile_vac_bannedrecent"] = "Player has already received a VAC ban in the last 5 months",
     ["indicator_profile_community_banned"] = "Player has already received a community ban from Steam",
-    ["indicator_profile_not_configured"] = "Player has not even set up his Steam account yet",
+    ["indicator_profile_not_configured"] = "Player has not even set up their Steam account yet",
     ["indicator_scenario_bypass_account"] = "Indicators suggest that this player has specially created a new Steam account. See the 'Players Online' menu tab.",
     ["indicator_scenario_cheatsuspect"] = "Indicators suggest that this player cheated. See 'Players Online' menu tab",
     ["indicator_scenario_sum"] = "Player is suspicious because they meet a high number of typical indicators. See menu tab 'Player Online'",

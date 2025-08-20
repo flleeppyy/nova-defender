@@ -289,7 +289,7 @@ local function DestroySession(adminSteamID)
         SendClient(client, "close")
     end
 
-    // if admin is still connected, display inside his menu
+    // if admin is still connected, display inside their menu
     local admin = session.admin
     if IsValid(admin) then
         SendAdmin(admin, "close")

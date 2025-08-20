@@ -111,7 +111,7 @@ local function InitCookies()
         Nova.log("d", string.format("Create unique device cookie name for the first time: %q", cookieName))
     end
 
-    // client sents us his stored cookie and we check if it is valid
+    // client sents us their stored cookie and we check if it is valid
     Nova.netReceive(Nova.netmessage("devicecookies_reqestcookie"), {auth = true}, function(len, ply)
         Nova.log("d", string.format("Received cookie response from %s", Nova.playerName(ply)))
 

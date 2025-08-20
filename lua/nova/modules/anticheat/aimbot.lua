@@ -409,7 +409,7 @@ local function AimbotHandler(ply, cmd, steamID)
     local yawDiff = ((lastay - angley + 180) % 360) - 180
     local angleDiff = abs(pitchDiff) + abs(yawDiff)
     local serverChanged = (lastsay != serverangley) or (cmdStats.serverChanged or false)
-    // check if player either only moved his mouse horizontally or vertically (IN_LEFT or IN_RIGHT are set)
+    // check if player either only moved their mouse horizontally or vertically (IN_LEFT or IN_RIGHT are set)
     local buttons = cmd:GetButtons()
     local onlyAxisChange = bit.band(buttons, IN_LEFT + IN_RIGHT) != 0
     local altPressed = bit.band(buttons, IN_WALK) != 0
@@ -534,7 +534,7 @@ local function AimbotHandler(ply, cmd, steamID)
             "anticheat_aimbot",
             steamID,
             "anticheat_aimbot_snap",
-            string.format("Player made a %d° turn within 1 tick without moving his mouse", math.ceil(angleDiff)) .. (altPressed and " while ALT key was pressed." or "."),
+            string.format("Player made a %d° turn within 1 tick without moving their mouse", math.ceil(angleDiff)) .. (altPressed and " while ALT key was pressed." or "."),
             "anticheat_aimbot_action"
         )
 
@@ -574,7 +574,7 @@ local function AimbotHandler(ply, cmd, steamID)
             steamID,
             "anticheat_aimbot_move",
             string.format(
-                "Player changed his view angle by %d° within %.1f seconds without moving his mouse",
+                "Player changed their view angle by %d° within %.1f seconds without moving their mouse",
                 math.ceil(cmdStats["totalAngleDiff"]),
                 TicksToSeconds(cmdStats["mouseNullCount"])
             ) .. (altPressed and " while ALT key was pressed." or "."),
@@ -614,7 +614,7 @@ local function AimbotHandler(ply, cmd, steamID)
             steamID,
             "anticheat_aimbot_contr",
             string.format(
-                "Player moved his mouse in a different direction than his view changed %d times within %.1f seconds",
+                "Player moved their mouse in a different direction than their view changed %d times within %.1f seconds",
                 cmdStats["totalMouseContradictions"],
                 TicksToSeconds(cmdStats["totalMouseContradictions"])
             ) .. (altPressed and " while ALT key was pressed." or "."),

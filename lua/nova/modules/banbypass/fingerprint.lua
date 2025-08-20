@@ -387,7 +387,7 @@ hook.Add("nova_init_loaded", "banbypass_fingerprint", function()
     Nova.netmessage("banbypass_fingerprint")
     local encryptionKey = Nova.generateString(16, 32)
     Nova.netReceive(Nova.netmessage("banbypass_fingerprint"), {auth = true}, function(len, ply)
-        // we already have his fingerprint
+        // we already have their fingerprint
         if fingerprintCache[ply:SteamID()] then return end
 
         Nova.log("d", string.format("Received fingerprint check from %s", Nova.playerName(ply)))
